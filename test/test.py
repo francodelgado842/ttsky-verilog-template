@@ -7,12 +7,17 @@ from cocotb.triggers import Timer
 class Host:
     def __init__(self,d):self.d=d
     async def tick(self):
-        self.d.clk.value=0;await Timer(10,units='ns')
-        self.d.clk.value=1;await Timer(10,units='ns')
-        self.d.clk.value=0;await Timer(10,units='ns')
+        # One 1 us cycle (1 MHz); allow propagation in gate-level simulation.
+        self.d.clk.value=0;await Timer(250,unit='ns')
+        self.d.clk.value=1;await Timer(500,unit='ns')
+        self.d.clk.value=0;await Timer(250,unit='ns')
     async def reset(self):
         self.d.ena.value=1;self.d.ui_in.value=0;self.d.uio_in.value=0;self.d.rst_n.value=0
         await self.tick();await self.tick();self.d.rst_n.value=1;await self.tick()
+        assert self.d.uio_oe.value.is_resolvable, (
+            f'uio_oe={self.d.uio_oe.value}: unknown bits after reset; '
+            'check GL_TEST power connections VPWR=1 and VGND=0 in tb.v'
+        )
         assert int(self.d.uio_oe.value)==0xE0
         assert int(self.d.uio_out.value)==0
     async def write(self,b,cmd=False,hold=1):
