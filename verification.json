@@ -1,0 +1,27 @@
+{
+  "rtl_module": "tt_um_example",
+  "simulator": "Icarus Verilog 11.0",
+  "cocotb": "2.0.1",
+  "cocotb_result": "PASS",
+  "standalone_result": "PASS",
+  "real_samples": 16000,
+  "real_windows": 250,
+  "rest_active_windows": 0,
+  "rest_windows": 125,
+  "closure_active_windows": 111,
+  "closure_windows": 125,
+  "area_timing_and_gds_verified": false,
+  "parameters": {
+    "offset": 1995,
+    "low": 10,
+    "high": 16,
+    "window": 64
+  },
+  "sha256": {
+    "src/project.v": "4ca8580fa35a57f77852d30df3031120dbf3b5e27a81bab35930aa8e6ba6a133",
+    "test/test.py": "203ea22a0d363d74bca04e4dd9416723778f92c03862f30c6b62a491e35e87a3",
+    "test/tb_selfcheck.sv": "dafa5f7668f248ddba743b9f43b5720b8698b6de8a2310be0aff7bb300b536ca",
+    "test/reposo_ch0.hex": "771b4ea304d292323c867e5419ac0600436ea97834cbec3b0d8a7db915fbd2f3",
+    "test/cierre_ch0.hex": "fb1fa44fc77ae6263ea277ce66e831fcfe5ca1f61e77a4705e08a76a758081c0"
+  }
+}
