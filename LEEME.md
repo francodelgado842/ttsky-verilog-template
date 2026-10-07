@@ -9,7 +9,6 @@ Circuito digital de un canal: resta de offset, valor absoluto, MAV de 64 muestra
 - Testbench autónomo: 16000 muestras reales, 250 ventanas; PASS.
 - Reposo: 0/125 ventanas activas. Cierre: 111/125 ventanas activas.
 - Resultado del par de demostración, NO precisión general ni validación clínica. El bloque etiquetado cierre contiene un inicio de poca amplitud; 14 ventanas no activas no significan necesariamente 14 errores de clasificación.
-- No se ejecutó síntesis SKY130, place-and-route, comprobación de timing, DRC/LVS ni simulación de compuertas. No se garantiza todavía una tile.
 
 ## Archivos
 
