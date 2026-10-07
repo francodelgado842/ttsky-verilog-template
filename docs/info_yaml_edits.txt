@@ -1,0 +1,28 @@
+Fragmento orientativo: actualizar estas claves en el info.yaml existente.
+No borrar el resto ni pegar este documento como archivo YAML completo.
+
+project:
+  title: "EMG MAV64 activity detector"
+  author: "Eduardo Franco Delgado Perez"
+  description: "12-bit MAV64 with configurable offset and hysteresis thresholds"
+  language: "Verilog"
+  clock_hz: 1000000
+  top_module: "tt_um_example"
+  source_files:
+    - "project.v"
+
+Dentro de pinout, reemplazar las etiquetas existentes:
+  ui[0] ... ui[7]: "data_in[0]" ... "data_in[7]"
+  uo[0] ... uo[7]: "read_data[0]" ... "read_data[7]"
+  uio[0]: "write"
+  uio[1]: "command"
+  uio[2]: "view[0]"
+  uio[3]: "view[1]"
+  uio[4]: "read_high_byte"
+  uio[5]: "activity"
+  uio[6]: "result_toggle"
+  uio[7]: "ack_toggle"
+
+Mantener el tamaño de tile actual hasta comprobar síntesis. 1 MHz es objetivo
+inicial, no timing demostrado. El módulo tt_um_example se conserva por
+compatibilidad con la plantilla; si luego se renombra, cambiar todas las referencias.
