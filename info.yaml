@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
-  title: "Sumador de prueba"
+  title: "EMG MAV y umbrales ajustables"
   author: "Franco Delgado"
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Sumador combinacional de dos entradas de 8 bits"      # One line description of what your project does
+  description:  "Un canal ADC digital de 12 bits; MAV de 64 muestras, offset y umbrales ajustables"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     1000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -23,34 +23,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "DATA_IN[0]"
+  ui[1]: "DATA_IN[1]"
+  ui[2]: "DATA_IN[2]"
+  ui[3]: "DATA_IN[3]"
+  ui[4]: "DATA_IN[4]"
+  ui[5]: "DATA_IN[5]"
+  ui[6]: "DATA_IN[6]"
+  ui[7]: "DATA_IN[7]"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "DATA_OUT[0]"
+  uo[1]: "DATA_OUT[1]"
+  uo[2]: "DATA_OUT[2]"
+  uo[3]: "DATA_OUT[3]"
+  uo[4]: "DATA_OUT[4]"
+  uo[5]: "DATA_OUT[5]"
+  uo[6]: "DATA_OUT[6]"
+  uo[7]: "DATA_OUT[7]"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "WRITE"
+  uio[1]: "CMD"
+  uio[2]: "VIEW[0]"
+  uio[3]: "VIEW[1]"
+  uio[4]: "BYTE_SELECT"
+  uio[5]: "ACTIVE"
+  uio[6]: "RESULT_TOGGLE"
+  uio[7]: "ACK_TOGGLE"
 
 # Do not change!
 yaml_version: 6
